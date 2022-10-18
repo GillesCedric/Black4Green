@@ -2,9 +2,11 @@ import type { NextPage } from 'next'
 import { lazy, Suspense } from 'react'
 import Head from 'next/head'
 import Header from '../src/components/index/Header'
+import GoodPractices from '../src/components/index/GoodPractices'
 
 //const Header = lazy(() => import('../components/index/Header'))
 const Home: NextPage = () => {
+  const tab = [1, 1,1,1,1,1]
   return <>
     <Head>
       <title>Black 4 Green</title>
@@ -14,24 +16,12 @@ const Home: NextPage = () => {
     <Header />
     <h1 className="text-3xl font-bold underline text-center pt-32">
       Hello world!
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
     </h1>
+    {
+      tab.map(() => {
+        return <GoodPractices />
+      })
+    }
   </>
 }
 
