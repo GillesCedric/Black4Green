@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
+import { lazy, Suspense } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
-import Header from '../components/index/Header'
+import Header from '../src/components/index/Header'
 
+//const Header = lazy(() => import('../components/index/Header'))
 const Home: NextPage = () => {
   return <>
     <Head>
@@ -11,8 +12,25 @@ const Home: NextPage = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
-    <h1 className="text-3xl font-bold underline text-center">
+    <h1 className="text-3xl font-bold underline text-center pt-32">
       Hello world!
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </h1>
   </>
 }
