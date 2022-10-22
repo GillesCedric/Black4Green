@@ -1,82 +1,32 @@
 import { NextComponentType } from 'next'
+import React from 'react'
 
 
-const GoodPractices: NextComponentType = () => {
-	return <>
-		{
-			//Code Loan
-		}
-		<div className="w-1/2 flex font-sans mb-5">
-  <div className="flex-none w-48 relative">
-    <img src="/classic-utility-jacket.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-  </div>
-  <form className="flex-auto p-6">
-    <div className="flex flex-wrap">
-      <h1 className="flex-auto text-lg font-semibold text-slate-900">
-        Classic Utility Jacket
-      </h1>
-      <div className="text-lg font-semibold text-slate-500">
-        $110.00
-      </div>
-      <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-        In stock
-      </div>
+export default class Header extends React.Component<{}, { goodPractices: string[] }> {
+
+  constructor(props: {}) {
+    super(props)
+    this.state = {
+      goodPractices: ['', '', '', '', '', '', '', '']
+    }
+  }
+
+  render: () => React.ReactNode = () => {
+    return <div className="bg-gray-100 sm:pt-40 w-full min-h-screen gap-10 flex-wrap flex justify-center items-center">
+      {
+        this.state.goodPractices.map((practice, index) =>
+          <div key={index} className="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+            <img className="h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" />
+            <div className="p-2">
+              <h2 className="font-bold text-lg mb-2 ">Heading</h2>
+              <p className="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+            </div>
+            <div className="m-2">
+              <a role='button' href='#' className="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+            </div>
+          </div>
+        )
+      }
     </div>
-    <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-      <div className="space-x-2 flex text-sm">
-        <label>
-          <input className="sr-only peer" name="size" type="radio" value="xs" checked />
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-            XS
-          </div>
-        </label>
-        <label>
-          <input className="sr-only peer" name="size" type="radio" value="s" />
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-            S
-          </div>
-        </label>
-        <label>
-          <input className="sr-only peer" name="size" type="radio" value="m" />
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-            M
-          </div>
-        </label>
-        <label>
-          <input className="sr-only peer" name="size" type="radio" value="l" />
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-            L
-          </div>
-        </label>
-        <label>
-          <input className="sr-only peer" name="size" type="radio" value="xl" />
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-            XL
-          </div>
-        </label>
-      </div>
-    </div>
-    <div className="flex space-x-4 mb-6 text-sm font-medium">
-      <div className="flex-auto flex space-x-4">
-        <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
-          Buy now
-        </button>
-        <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
-          Add to bag
-        </button>
-      </div>
-      <button className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
-        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-        </svg>
-      </button>
-    </div>
-    <p className="text-sm text-slate-700">
-      Free shipping on all continental US orders.
-    </p>
-  </form>
-</div>
-	</ >
+  }
 }
-
-export default GoodPractices
