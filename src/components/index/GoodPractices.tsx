@@ -1,22 +1,23 @@
 import React from 'react'
+import GoodPracticesModel, { GoodPractices as GoodPracticesType } from '../../models/GoodPractices'
 
+interface PropsGoodPractices {
+  goodPractices: GoodPracticesType[]
+}
 
-export default class Header extends React.Component<{}, { goodPractices: string[] }> {
+export default class GoodPractices extends React.Component<PropsGoodPractices> {
 
-  constructor(props: {}) {
+  constructor(props: PropsGoodPractices) {
     super(props)
-    this.state = {
-      goodPractices: ['', '', '', '', '', '', '', '', '']
-    }
   }
 
   render: () => React.ReactNode = () => {
     return <div className="bg-gray-100 py-12 sm:pt-40 w-full min-h-screen gap-10 flex-wrap flex justify-center items-center">
       {
-        this.state.goodPractices.map((practice, index) =>
+        this.props.goodPractices.map((practice, index) =>
           <div key={index} className="w-80 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <div className="m-2">
-              <a role='button' href='#' className="text-white bg-sky-500 px-3 py-1 rounded-md">Catégorie</a>
+              <a role='button' href='#' className="text-white bg-sky-500 px-3 py-1 rounded-md">{practice.Family}</a>
             </div>
             <div className="p-2">
               <h2 className="font-bold text-lg mb-2 ">Titre</h2>
@@ -39,5 +40,19 @@ export default class Header extends React.Component<{}, { goodPractices: string[
         )
       }
     </div>
+  }
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const goodPractices = GoodPracticesModel.getGoodPractices()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      goodPractices
+    }
   }
 }

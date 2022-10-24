@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import Head from 'next/head'
+import GoodPracticesModel from '../src/models/GoodPractices'
 //import Header from '../src/components/Header'
 //import GoodPractices from '../src/components/index/GoodPractices'
 //import Footer from '../src/components/Footer'
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
     </Head>
     <Suspense fallback={`Loading...`}>
       <Header />
-      <GoodPractices />
+      <GoodPractices goodPractices={GoodPracticesModel.getGoodPractices()} />
       <Footer />
     </Suspense>
 
