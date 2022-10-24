@@ -2,7 +2,7 @@ import React from 'react'
 import GoodPracticesModel, { GoodPractices as GoodPracticesType } from '../../models/GoodPractices'
 
 interface PropsGoodPractices {
-  goodPractices: GoodPracticesType[]
+  goodPractices?: GoodPracticesType[]
 }
 
 export default class GoodPractices extends React.Component<PropsGoodPractices> {
@@ -14,7 +14,7 @@ export default class GoodPractices extends React.Component<PropsGoodPractices> {
   render: () => React.ReactNode = () => {
     return <div className="bg-gray-100 py-12 sm:pt-40 w-full min-h-screen gap-10 flex-wrap flex justify-center items-center">
       {
-        this.props.goodPractices.map((practice, index) =>
+        this.props.goodPractices?.map((practice, index) =>
           <div key={index} className="w-80 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <div className="m-2">
               <a role='button' href='#' className="text-white bg-sky-500 px-3 py-1 rounded-md">{practice.Family}</a>
