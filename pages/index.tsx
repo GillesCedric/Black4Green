@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     </Head>
     <Suspense fallback={`Loading...`}>
       <Header />
-      <GoodPractices goodPractices={GoodPracticesModel.getGoodPractices()} />
+      <GoodPractices />
       <Footer />
     </Suspense>
 
