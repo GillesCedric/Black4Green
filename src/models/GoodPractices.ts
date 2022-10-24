@@ -1,4 +1,4 @@
-import data from 'C:/Users/cedri/Downloads/data.json'
+import data from './data.json'
 
 export type GoodPractices = {
 	Family: string,
