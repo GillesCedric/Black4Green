@@ -4,8 +4,9 @@ import GoodPracticesModel, { GoodPractices as GoodPracticesType } from '../../mo
 import GoodPractice from './GoodPractice'
 
 interface PropsGoodPractices {
-  itemsPerPage: number 
+  itemsPerPage: number
   goodPractices: GoodPracticesType[]
+  totalItems: number
 }
 
 interface StateGoodPractices {
@@ -26,20 +27,20 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
 
   componentDidUpdate(): void {
     const endOffset = this.state.itemOffset + this.props.itemsPerPage,
-      currentItems = this.props.goodPractices.slice(this.state.itemOffset, endOffset),
-      pageCount = Math.ceil(this.props.goodPractices.length / this.props.itemsPerPage)
-    if (JSON.stringify(this.state.currentItems) != JSON.stringify(currentItems)) this.setState({ currentItems: this.props.goodPractices.slice(this.state.itemOffset, endOffset) })
+      currentItems = GoodPracticesModel.getGoodPractices(this.state.itemOffset, endOffset),
+      pageCount = Math.ceil(this.props.totalItems / this.props.itemsPerPage)
+    if (JSON.stringify(this.state.currentItems) != JSON.stringify(currentItems)) this.setState({ currentItems: currentItems })
     if (this.state.pageCount != pageCount) this.setState({ pageCount: pageCount })
   }
 
   componentDidMount = () => {
     const endOffset = this.state.itemOffset + this.props.itemsPerPage
     this.setState({ currentItems: this.props.goodPractices.slice(this.state.itemOffset, endOffset) })
-    this.setState({ pageCount: Math.ceil(this.props.goodPractices.length / this.props.itemsPerPage) })
+    this.setState({ pageCount: Math.ceil(this.props.totalItems / this.props.itemsPerPage) })
   }
 
   private readonly handlePageClick = (event: { selected: number }) => {
-    const newOffset = (event.selected * this.props.itemsPerPage) % this.props.goodPractices.length
+    const newOffset = (event.selected * this.props.itemsPerPage) % this.props.totalItems
     this.setState({ itemOffset: newOffset })
   }
 

@@ -7,7 +7,7 @@ import GoodPracticesModel, {GoodPractices as GoodPracticesType} from '../src/mod
 const Header = dynamic(() => import('../src/components/Header'), { suspense: true })
 const GoodPractices = dynamic(() => import('../src/components/index/GoodPractices'), { suspense: true })
 const Footer = dynamic(() => import('../src/components/Footer'), { suspense: true })
-const Home: NextPage<{goodPractices: GoodPracticesType[]}> = ({goodPractices}) => {
+const Home: NextPage<{goodPractices: GoodPracticesType[], totalItems: number}> = ({goodPractices, totalItems}) => {
 
   return <>
     <Head>
@@ -17,7 +17,7 @@ const Home: NextPage<{goodPractices: GoodPracticesType[]}> = ({goodPractices}) =
     </Head>
     <Suspense fallback={`Loading...`}>
       <Header />
-      <GoodPractices itemsPerPage={21} goodPractices={goodPractices}/>
+      <GoodPractices itemsPerPage={21} goodPractices={goodPractices} totalItems={totalItems} />
       <Footer />
     </Suspense>
   </>
@@ -27,11 +27,13 @@ export default Home
 
 export async function getStaticProps() {
 
-  const goodPractices = GoodPracticesModel.getAllGoodPractices()
+  const goodPractices = GoodPracticesModel.getGoodPractices(),
+    totalItems = GoodPracticesModel.getGoodPracticesSize()
 
   return {
     props: {
-      goodPractices
+      goodPractices,
+      totalItems
     }
   }
 }

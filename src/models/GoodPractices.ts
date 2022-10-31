@@ -47,23 +47,7 @@ export default abstract class GoodPracticesModel {
 	 * @param {number} amount the number of products that should be rendered per page
 	 * @returns {Products} the sorted list of products
 	 */
-	static readonly getGoodPractices = (index: number, amount: number): GoodPractices[] => {
-		console.log(index+' '+amount)
-
-		const max = data.length
-
-		let products: GoodPractices[] = []
-
-		if (amount > max) amount = max
-		const
-			offset = index * amount,
-			limit = amount + offset
-
-		//TODO @Cedric correction of some bugs: the last page doesn't render
-		for (let index = offset; index < limit; index++) products.push(data[index])
-
-		return products
-	}
+	static readonly getGoodPractices = (itemOffset: number = 0, endOffset: number = 21): GoodPractices[] => data.slice(itemOffset, endOffset)
 
 	public static getAllGoodPractices = () => data
 
