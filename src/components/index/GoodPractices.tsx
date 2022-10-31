@@ -1,44 +1,61 @@
 import React from 'react'
+import ReactPaginate from 'react-paginate'
 import GoodPracticesModel, { GoodPractices as GoodPracticesType } from '../../models/GoodPractices'
+import GoodPractice from './GoodPractice'
 
 interface PropsGoodPractices {
+  itemsPerPage: number 
   goodPractices: GoodPracticesType[]
 }
 
-export default class GoodPractices extends React.Component<PropsGoodPractices> {
+interface StateGoodPractices {
+  currentItems: GoodPracticesType[]
+  pageCount: number
+  itemOffset: number
+}
 
+export default class GoodPractices extends React.Component<PropsGoodPractices, StateGoodPractices> {
   constructor(props: PropsGoodPractices) {
     super(props)
+    this.state = {
+      currentItems: [],
+      pageCount: 0,
+      itemOffset: 0
+    }
+  }
+
+  componentDidUpdate(): void {
+    const endOffset = this.state.itemOffset + this.props.itemsPerPage,
+      currentItems = this.props.goodPractices.slice(this.state.itemOffset, endOffset),
+      pageCount = Math.ceil(this.props.goodPractices.length / this.props.itemsPerPage)
+    if (JSON.stringify(this.state.currentItems) != JSON.stringify(currentItems)) this.setState({ currentItems: this.props.goodPractices.slice(this.state.itemOffset, endOffset) })
+    if (this.state.pageCount != pageCount) this.setState({ pageCount: pageCount })
+  }
+
+  componentDidMount = () => {
+    const endOffset = this.state.itemOffset + this.props.itemsPerPage
+    this.setState({ currentItems: this.props.goodPractices.slice(this.state.itemOffset, endOffset) })
+    this.setState({ pageCount: Math.ceil(this.props.goodPractices.length / this.props.itemsPerPage) })
+  }
+
+  private readonly handlePageClick = (event: { selected: number }) => {
+    const newOffset = (event.selected * this.props.itemsPerPage) % this.props.goodPractices.length
+    this.setState({ itemOffset: newOffset })
   }
 
   render: () => React.ReactNode = () => {
-    return <div className="bg-gray-100 py-12 sm:pt-40 w-full min-h-screen gap-10 flex-wrap flex justify-center items-center">
-      {
-        this.props.goodPractices.map((practice, index) =>
-          <div key={index} className="w-80 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-            <div className="m-2">
-              <a role='button' href='#' className="text-white bg-sky-500 px-3 py-1 rounded-md">{practice.Family}</a>
-            </div>
-            <div className="p-2">
-              <h2 className="font-bold text-lg mb-2 ">Titre</h2>
-              <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, numquam modi. Consequatur dolores nihil voluptatibus a impedit porro distinctio omnis, explicabo tempora asperiores minima ducimus obcaecati voluptates nesciunt fugit necessitatibus</p>
-            </div>
-            <div className="m-2 float-right">
-              <button role='button' className="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">
-                Ajouter au Panier
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mx-2" width={24} height={24} viewBox="0 0 24 24" stroke-width={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <circle cx={6} cy={19} r={2}></circle>
-                  <circle cx={17} cy={19} r={2}></circle>
-                  <path d="M17 17h-11v-14h-2"></path>
-                  <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13"></path>
-                  <path d="M15 6h6m-3 -3v6"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        )
-      }
-    </div>
+    return <>
+      <GoodPractice goodPractices={this.state.currentItems} />
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={this.handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={this.state.pageCount}
+        previousLabel="< previous"
+        renderOnZeroPageCount={undefined}
+      />
+    </>
+
   }
 }

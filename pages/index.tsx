@@ -2,15 +2,13 @@ import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import Head from 'next/head'
-import GoodPracticesModel, { GoodPractices as GoodPracticesType} from '../src/models/GoodPractices'
-//import Header from '../src/components/Header'
-//import GoodPractices from '../src/components/index/GoodPractices'
-//import Footer from '../src/components/Footer'
+import GoodPracticesModel, {GoodPractices as GoodPracticesType} from '../src/models/GoodPractices'
 
 const Header = dynamic(() => import('../src/components/Header'), { suspense: true })
 const GoodPractices = dynamic(() => import('../src/components/index/GoodPractices'), { suspense: true })
 const Footer = dynamic(() => import('../src/components/Footer'), { suspense: true })
 const Home: NextPage<{goodPractices: GoodPracticesType[]}> = ({goodPractices}) => {
+
   return <>
     <Head>
       <title>Black 4 Green</title>
@@ -19,22 +17,18 @@ const Home: NextPage<{goodPractices: GoodPracticesType[]}> = ({goodPractices}) =
     </Head>
     <Suspense fallback={`Loading...`}>
       <Header />
-      <GoodPractices goodPractices={goodPractices} />
+      <GoodPractices itemsPerPage={21} goodPractices={goodPractices}/>
       <Footer />
     </Suspense>
-
   </>
 }
 
 export default Home
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const goodPractices = GoodPracticesModel.getGoodPractices()
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
+  const goodPractices = GoodPracticesModel.getAllGoodPractices()
+
   return {
     props: {
       goodPractices
