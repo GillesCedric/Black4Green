@@ -42,21 +42,27 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
   private readonly handlePageClick = (event: { selected: number }) => {
     const newOffset = (event.selected * this.props.itemsPerPage) % this.props.totalItems
     this.setState({ itemOffset: newOffset })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   render: () => React.ReactNode = () => {
-    return <>
+    return <div className='container bg-gray-100 w-full'>
       <GoodPractice goodPractices={this.state.currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel="»"
         onPageChange={this.handlePageClick}
         pageRangeDisplayed={5}
         pageCount={this.state.pageCount}
-        previousLabel="< previous"
+        previousLabel="«"
         renderOnZeroPageCount={undefined}
+        containerClassName='flex justify-end rounded-md shadow-sm'
+        pageClassName='py-2 px-4 mx-px  mb-12 sm:mt-5 text-sm font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 hidden sm:block'
+        previousClassName='px-5 py-2 mx-8 mb-12 sm:mt-5 sm:py-1 sm:px-4 sm:mx-px text-lg font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700'
+        nextClassName='px-5 py-2 mx-8 mb-12 sm:mt-5 sm:py-1 sm:px-4 sm:mx-px sm:mr-28 text-lg font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700'
+        breakClassName='py-1 px-4 mx-px mb-12 sm:mt-5 text-lg font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 hidden sm:block'
       />
-    </>
+    </div>
 
   }
 }

@@ -49,8 +49,6 @@ export default abstract class GoodPracticesModel {
 	 */
 	static readonly getGoodPractices = (itemOffset: number = 0, endOffset: number = 21): GoodPractices[] => data.slice(itemOffset, endOffset)
 
-	public static getAllGoodPractices = () => data
-
 	public static readonly getGoodPracticesSize = () => data.length
 
 	/*
