@@ -1,4 +1,4 @@
-import data from './data.json'
+import data from '../data/data.json'
 
 export type GoodPractices = {
 	Family: string,
@@ -39,6 +39,12 @@ export type GoodPractices = {
 	AutomatizationInformation: string
 }
 
+export enum Filters {
+	family = 'Family',
+	incontournable = 'Incontournable',
+	type = 'Type'
+}
+
 export default abstract class GoodPracticesModel {
 
 	/**
@@ -49,52 +55,21 @@ export default abstract class GoodPracticesModel {
 	 */
 	static readonly getGoodPractices = (itemOffset: number = 0, endOffset: number = 21): GoodPractices[] => data.slice(itemOffset, endOffset)
 
-	public static readonly getGoodPracticesSize = () => data.length
-
-	/*
-	public static readonly getAllGoodPractices = () => {
-		const goodPractices: GoodPractices[] = []
-		data.map(value => {
-			goodPractices.push({
-				Family: value.FIELD1,
-				Id: value.FIELD2,
-				Planet: value.FIELD3,
-				People: value.FIELD4,
-				Prosperity: value.FIELD5,
-				Recommendation: value.FIELD6,
-				Criteria: value.FIELD7,
-				Justification: value.FIELD8,
-				Stage: value.FIELD9,
-				Tests: {
-					1: value.FIELD10,
-					2: value.FIELD11,
-					3: value.FIELD12
-				},
-				Correspondence: value.FIELD13,
-				Link: value.FIELD14,
-				Type: value.FIELD15,
-				Difficulty: value.FIELD16,
-				Goal: value.FIELD17,
-				Incontournable: value.FIELD18.toLocaleUpperCase(),
-				Tags: value.FIELD19,
-				Actors: value.FIELD20,
-				Indicators: {
-					_: value.FIELD21,
-					X: value.FIELD22,
-					Y: value.FIELD23
-				},
-				Priority: value.FIELD24,
-				Recurrence: value.FIELD25,
-				UseCase: value.FIELD26,
-				Example: value.FIELD27,
-				Limit: value.FIELD28,
-				Automatizable: value.FIELD29,
-				AutomatizationScript: value.FIELD30,
-				AutomatizationLevel: value.FIELD31,
-				AutomatizationInformation: value.FIELD32
-			})
-		})
-		return goodPractices
+	static readonly getGoodPracticesWithFilter = (filter: Filters, value: string, itemOffset?: number, endOffset?: number): GoodPractices[] => {
+		if (itemOffset || endOffset) return data.filter(practice => practice[filter] == value.toUpperCase()).slice(itemOffset, endOffset)
+		return data.filter(practice => practice[filter] == value.toUpperCase())
 	}
-	*/
+
+	static readonly getRecommendationsWithFilter = (filter: Filters, value: string): string[] => {
+		const recommendations: string[] = []
+		data.filter(practice => practice[filter] == value.toUpperCase()).map(practice => {
+			recommendations.push(practice.Recommendation)
+		})
+		return recommendations.filter((recommendation, index) => recommendations.indexOf(recommendation) == index)
+	}
+
+	static readonly getGoodPracticesSize = () => data.length
+
+	static readonly getGoodPracticesWithFilterSize = (filter: Filters, value: string): number => data.filter(practice => practice[filter] == value.toUpperCase()).length
+
 }
