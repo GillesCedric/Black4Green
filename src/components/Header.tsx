@@ -40,16 +40,17 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 				</div>
 			</div >
 			<div className={`px-3 pt-2 pb-4 ${this.state.isOpen ? 'block' : 'hidden'} xl:flex`}>
-				<Link href="strategie" className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700'>STATEGIE</Link>
-				<Link href="specifications" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>SPECIFICATIONS</Link>
-				<Link href="ux-ui" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>UX / UI</Link>
-				<Link href="contenus" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>CONTENUS</Link>
-				<Link href="front-end" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>FRONT END</Link>
-				<Link href="architecture" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>ARCHITECTURE</Link>
-				<Link href="hebergement" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>HEBERGEMENT</Link>
-				<Link href="back-end" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>BACK END</Link>
-				<Link href="incontournables" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>INCONTOURNABLES</Link>
-				<Link href="panier" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'>
+				<Link href="strategie"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>STATEGIE</span></Link>
+				<Link href="specifications" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>SPECIFICATIONS</span></Link>
+				<Link href="ux-ui" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>UX / UI</span></Link>
+				<Link href="contenus" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>CONTENUS</span></Link>
+				<Link href="front-end" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>FRONT END</span></Link>
+				<Link href="architecture" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>ARCHITECTURE</span></Link>
+				<Link href="hebergement" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>HEBERGEMENT</span></Link>
+				<Link href="back-end" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>BACK END</span></Link>
+				<Link href="incontournables" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>INCONTOURNABLES</span></Link>
+				<Link href="panier">
+					<div className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2 cursor-pointer'>
 					<span className='pr-1 text-sm '>PANIER</span>
 					<svg xmlns="http://www.w3.org/2000/svg" className="inline-block" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
 						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -58,7 +59,7 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 						<path d="M17 17h-11v-14h-2"></path>
 						<path d="M6 5l14 1l-1 7h-13"></path>
 					</svg>
-
+					</div>
 				</Link>
 			</div>
 		</header>

@@ -24,14 +24,16 @@ export default class GoodPractice extends React.Component<PropsGoodPractices> {
         this.props.goodPractices.map((practice, index) =>
           <div key={index} className="w-80 h-96 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl pb-5">
             <Link href={`${practice.Id}`}>
-              <div className="m-2 h-14 items-center">
-                {this.props.family && <span className="text-white bg-gray-500 px-3 py-1 rounded-md">{practice.Family}</span>}
-                <span className={`text-white ${practice.Type == 'CONSEIL' ? 'bg-green-600' : 'bg-blue-600'} px-3 py-1 rounded-md ${this.props.family ? 'ml-2' : ''} mr-5 ${(practice.Family == 'HEBERGEMENT' || practice.Family == 'SPECIFICATIONS') && practice.Type == 'RECO' ? 'text-sm' : ''}`}>{practice.Type == 'RECO' ? 'RECOMMENDATION' : practice.Type}</span>
-                {this.props.incontournable && practice.Incontournable == 'INCONTOURNABLE' && <p className='mt-3'><span className="text-white bg-red-600 px-3 py-1 rounded-md">{practice.Incontournable}</span></p>}
-              </div>
-              <div className="p-2 h-60">
-                <h2 className="font-bold text-lg mb-2 ">{practice.Id}</h2>
-                <p className="text-xl text-gray-600">{practice.Criteria}</p>
+              <div className='cursor-pointer'>
+                <div className="m-2 h-14 items-center">
+                  {this.props.family && <span className="text-white bg-gray-500 px-3 py-1 rounded-md">{practice.Family}</span>}
+                  <span className={`text-white ${practice.Type == 'CONSEIL' ? 'bg-green-600' : 'bg-blue-600'} px-3 py-1 rounded-md ${this.props.family ? 'ml-2' : ''} mr-5 ${(practice.Family == 'HEBERGEMENT' || practice.Family == 'SPECIFICATIONS') && practice.Type == 'RECO' ? 'text-sm' : ''}`}>{practice.Type == 'RECO' ? 'RECOMMENDATION' : practice.Type}</span>
+                  {this.props.incontournable && practice.Incontournable == 'INCONTOURNABLE' && <p className='mt-3'><span className="text-white bg-red-600 px-3 py-1 rounded-md">{practice.Incontournable}</span></p>}
+                </div>
+                <div className="p-2 h-60">
+                  <h2 className="font-bold text-lg mb-2 ">{practice.Id}</h2>
+                  <p className="text-xl text-gray-600">{practice.Criteria}</p>
+                </div>
               </div>
             </Link>
             <div className="m-2 float-right">
