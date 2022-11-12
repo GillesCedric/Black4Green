@@ -9,7 +9,7 @@ const Footer: NextComponentType = () => {
 				<li><h1 className="mb-1 font-semibold">Liens A</h1></li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -18,7 +18,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -27,7 +27,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -39,7 +39,7 @@ const Footer: NextComponentType = () => {
 				<li><h1 className="mb-1 font-semibold">Liens B</h1></li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -48,7 +48,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -57,7 +57,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -69,7 +69,7 @@ const Footer: NextComponentType = () => {
 				<li><h1 className="mb-1 font-semibold">Liens C</h1></li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -78,7 +78,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -87,7 +87,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -99,7 +99,7 @@ const Footer: NextComponentType = () => {
 				<li><h1 className="mb-1 font-semibold">Liens D</h1></li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -108,7 +108,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
@@ -117,7 +117,7 @@ const Footer: NextComponentType = () => {
 				</li>
 				<li>
 					<a
-						className="text-gray-400 hover:text-teal-400 duration-300
+						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
