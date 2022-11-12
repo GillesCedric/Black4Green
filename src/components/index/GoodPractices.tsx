@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate'
 import GoodPracticesModel, { GoodPractices as GoodPracticesType } from '../../models/GoodPractices'
-import GoodPractice from './GoodPractice'
+import GoodPractice from '../GoodPractice'
 
 interface PropsGoodPractices {
   itemsPerPage: number
@@ -25,7 +25,7 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
     }
   }
 
-  componentDidUpdate(): void {
+  componentDidUpdate = () => {
     const endOffset = this.state.itemOffset + this.props.itemsPerPage,
       currentItems = GoodPracticesModel.getGoodPractices(this.state.itemOffset, endOffset),
       pageCount = Math.ceil(this.props.totalItems / this.props.itemsPerPage)
@@ -34,8 +34,6 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
   }
 
   componentDidMount = () => {
-    const endOffset = this.state.itemOffset + this.props.itemsPerPage
-    this.setState({ currentItems: this.props.goodPractices.slice(this.state.itemOffset, endOffset) })
     this.setState({ pageCount: Math.ceil(this.props.totalItems / this.props.itemsPerPage) })
   }
 
@@ -46,8 +44,8 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
   }
 
   render: () => React.ReactNode = () => {
-    return <div className='container bg-gray-100 w-full'>
-      <GoodPractice goodPractices={this.state.currentItems} />
+    return <div className='bg-gray-100 w-full sm:pt-40'>
+      <GoodPractice goodPractices={this.state.currentItems} family incontournable />
       <ReactPaginate
         breakLabel="..."
         nextLabel="»"
