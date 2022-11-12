@@ -1,5 +1,5 @@
 import { NextComponentType } from 'next'
-import GoodPractices from './index/GoodPractices'
+import Link from 'next/link'
 
 
 const Footer: NextComponentType = () => {
@@ -8,121 +8,121 @@ const Footer: NextComponentType = () => {
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens A</h1></li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 			</ul>
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens B</h1></li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 			</ul>
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens C</h1></li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 			</ul>
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens D</h1></li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a
+					<Link
 						className="text-gray-400 hover:text-blue-500 duration-300
           text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
-					</a>
+					</Link>
 				</li>
 			</ul>
 		</div>
