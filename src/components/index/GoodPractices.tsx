@@ -44,7 +44,7 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
   }
 
   render: () => React.ReactNode = () => {
-    return <div className='bg-gray-100 w-full sm:pt-40'>
+    return <div className='bg-gray-100 w-full pt-28'>
       <GoodPractice goodPractices={this.state.currentItems} family incontournable />
       <ReactPaginate
         breakLabel="..."

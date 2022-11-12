@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import logo from '../../public/logo-min.png'
 
 export default class Header extends React.Component<{}, { isOpen: boolean }> {
 
@@ -11,11 +13,14 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 	}
 
 	render: () => React.ReactNode = () => {
-		return <header className='z-10 xl:fixed xl:w-full bg-gray-800 xl:flex xl:justify-between xl:items-center xl:px-4 xl:py-3'>
+		return <header className='z-10 fixed w-full bg-gray-800 xl:flex xl:justify-between xl:items-center xl:px-4 xl:py-3'>
 			<div className="flex items-center justify-between px-4 py-3 xl:p-0">
 				<div className='text-white'>
 					<Link href='/'>
-						BLACK 4 GREEN
+						<div className='flex cursor-pointer'>
+							<Image src={logo} width={60} height={50} />
+							<div className='items-end pt-3 ml-2'>BLACK 4 GREEN</div>
+						</div>
 					</Link>
 				</div>
 				<div className='xl:hidden'>
