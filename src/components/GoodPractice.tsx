@@ -37,7 +37,7 @@ export default class GoodPractice extends React.Component<PropsGoodPractices> {
               </div>
             </Link>
             <div className="m-2 float-right">
-              <button name={`addToCart-${index}`} type='button' role='button' className="inline-block px-3 py-1 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={event => this.addToCart(practice.Id)}>
+              <button name={`addToCart-${index}`} type='button' role='button' className="inline-block px-3 py-1 bg-blue-600 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={event => this.addToCart(practice.Id)}>
                 Ajouter au Panier
                 <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mx-2" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

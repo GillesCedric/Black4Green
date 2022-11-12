@@ -18,7 +18,7 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 				<div className='text-white'>
 					<Link href='/'>
 						<div className='flex cursor-pointer'>
-							<Image src={logo} width={60} height={50} />
+							<Image src={logo} width={72} height={50} alt='logo black 4 green' />
 							<div className='items-end pt-3 ml-2'>BLACK 4 GREEN</div>
 						</div>
 					</Link>
