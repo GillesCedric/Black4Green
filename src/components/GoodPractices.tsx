@@ -19,13 +19,9 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
     }
   }
 
-  componentDidMount = () => {
-    this.setState({ goodPractices: this.props.goodPractices })
-  }
-
   render: () => React.ReactNode = () => {
     return <div className='bg-gray-100 w-full pb-12'>
-      <Accordion goodPractices={this.state.goodPractices} recommendations={this.props.recommendations} />
+      <Accordion goodPractices={this.props.goodPractices} recommendations={this.props.recommendations} />
     </div>
 
   }

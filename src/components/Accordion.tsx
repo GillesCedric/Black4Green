@@ -21,14 +21,10 @@ export default class Accordion extends React.Component<PropsGoodAccordion, State
     }
   }
 
-  componentDidMount = () => {
-    this.setState({ recommendations: this.props.recommendations })
-  }
-
   render = () => {
     return <div className='pt-40'>
       {
-        this.state.recommendations.map((recommendation, index) => {
+        this.props.recommendations.map((recommendation, index) => {
           const childrens = this.props.goodPractices.filter(practice => practice.Recommendation == recommendation)
           return <AccordionItem
             key={index}
