@@ -19,7 +19,7 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 					</Link>
 				</div>
 				<div className='xl:hidden'>
-					<button name='menu' type="button" onClick={() => this.setState({ isOpen: !this.state.isOpen })} className='block text-gray-500 hover:text-white focus:outline-none'>
+					<button aria-label='menu' type="button" onClick={() => this.setState({ isOpen: !this.state.isOpen })} className='block text-gray-500 hover:text-white focus:outline-none'>
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 fill-current" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
 							<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
 							{
@@ -51,14 +51,14 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 				<Link href="incontournables" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>INCONTOURNABLES</span></Link>
 				<Link href="panier">
 					<div className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2 cursor-pointer'>
-					<span className='pr-1 text-sm '>PANIER</span>
-					<svg xmlns="http://www.w3.org/2000/svg" className="inline-block" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-						<circle cx={6} cy={19} r={2}></circle>
-						<circle cx={17} cy={19} r={2}></circle>
-						<path d="M17 17h-11v-14h-2"></path>
-						<path d="M6 5l14 1l-1 7h-13"></path>
-					</svg>
+						<span className='pr-1 text-sm '>PANIER</span>
+						<svg xmlns="http://www.w3.org/2000/svg" className="inline-block" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+							<circle cx={6} cy={19} r={2}></circle>
+							<circle cx={17} cy={19} r={2}></circle>
+							<path d="M17 17h-11v-14h-2"></path>
+							<path d="M6 5l14 1l-1 7h-13"></path>
+						</svg>
 					</div>
 				</Link>
 			</div>

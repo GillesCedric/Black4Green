@@ -27,7 +27,7 @@ export default class GoodPractice extends React.Component<PropsGoodPractices> {
               <div className='cursor-pointer'>
                 <div className="m-2 h-14 items-center">
                   {this.props.family && <span className="text-white bg-gray-500 px-3 py-1 rounded-md">{practice.Family}</span>}
-                  <span className={`text-white ${practice.Type == 'CONSEIL' ? 'bg-green-600' : 'bg-blue-600'} px-3 py-1 rounded-md ${this.props.family ? 'ml-2' : ''} mr-5 ${(practice.Family == 'HEBERGEMENT' || practice.Family == 'SPECIFICATIONS') && practice.Type == 'RECO' ? 'text-sm' : ''}`}>{practice.Type == 'RECO' ? 'RECOMMENDATION' : practice.Type}</span>
+                  <span className={`text-white ${practice.Type == 'CONSEIL' ? 'bg-green-700' : 'bg-blue-600'} px-3 py-1 rounded-md ${this.props.family ? 'ml-2' : ''} mr-5 ${(practice.Family == 'HEBERGEMENT' || practice.Family == 'SPECIFICATIONS') && practice.Type == 'RECO' ? 'text-sm' : ''}`}>{practice.Type == 'RECO' ? 'RECOMMENDATION' : practice.Type}</span>
                   {this.props.incontournable && practice.Incontournable == 'INCONTOURNABLE' && <p className='mt-3'><span className="text-white bg-red-600 px-3 py-1 rounded-md">{practice.Incontournable}</span></p>}
                 </div>
                 <div className="p-2 h-60">
