@@ -25,18 +25,18 @@ export default class GoodPractice extends React.Component<PropsGoodPractices> {
           <div key={index} className="w-80 h-96 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl pb-5">
             <Link href={`${practice.Id}`}>
               <div className='cursor-pointer'>
-                <div className="m-2 h-14 items-center">
+                <div className="m-2 h-auto flex-wrap flex gap-2">
                   {this.props.family && <span className="text-white bg-gray-500 px-3 py-1 rounded-md">{practice.Family}</span>}
-                  <span className={`text-white ${practice.Type == 'CONSEIL' ? 'bg-green-700' : 'bg-blue-600'} px-3 py-1 rounded-md ${this.props.family ? 'ml-2' : ''} mr-5 ${(practice.Family == 'HEBERGEMENT' || practice.Family == 'SPECIFICATIONS') && practice.Type == 'RECO' ? 'text-sm' : ''}`}>{practice.Type == 'RECO' ? 'RECOMMENDATION' : practice.Type}</span>
-                  {this.props.incontournable && practice.Incontournable == 'INCONTOURNABLE' && <p className='mt-3'><span className="text-white bg-red-600 px-3 py-1 rounded-md">{practice.Incontournable}</span></p>}
+                  <span className={`text-white ${practice.Type == 'CONSEIL' ? 'bg-green-700' : 'bg-blue-600'} px-3 py-1 rounded-md`}>{practice.Type == 'RECO' ? 'RECOMMENDATION' : practice.Type}</span>
+                  {this.props.incontournable && practice.Incontournable == 'INCONTOURNABLE' && <span className="text-white bg-red-600 px-3 py-1 rounded-md">{practice.Incontournable}</span>}
                 </div>
-                <div className="p-2 h-60">
+                <div className={`p-2 ${practice.Incontournable == '' ? 'h-60' : 'h-48'}`}>
                   <h2 className="font-bold text-lg mb-2 ">{practice.Id}</h2>
                   <p className="text-xl text-gray-600">{practice.Criteria}</p>
                 </div>
               </div>
             </Link>
-            <div className="m-2 float-right">
+            <div className="m-2 float-right relative">
               <button name={`addToCart-${index}`} type='button' role='button' className="inline-block px-3 py-1 bg-blue-600 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={event => this.addToCart(practice.Id)}>
                 Ajouter au Panier
                 <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mx-2" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">

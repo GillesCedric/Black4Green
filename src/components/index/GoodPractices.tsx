@@ -59,6 +59,7 @@ export default class GoodPractices extends React.Component<PropsGoodPractices, S
         previousClassName='px-5 py-2 mx-8 mb-12 sm:mt-5 sm:py-1 sm:px-4 sm:mx-px text-lg font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700'
         nextClassName='px-5 py-2 mx-8 mb-12 sm:mt-5 sm:py-1 sm:px-4 sm:mx-px sm:mr-28 text-lg font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700'
         breakClassName='py-1 px-4 mx-px mb-12 sm:mt-5 text-lg font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 hidden sm:block'
+        activeClassName='bg-blue-700 text-gray-100'
       />
     </div>
 
