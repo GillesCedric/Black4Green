@@ -45,15 +45,14 @@ export default class Header extends React.Component<{}, { isOpen: boolean }> {
 				</div>
 			</div >
 			<div className={`px-3 pt-2 pb-4 ${this.state.isOpen ? 'block' : 'hidden'} xl:flex`}>
-				<Link href="strategie"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>STATEGIE</span></Link>
-				<Link href="specifications" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>SPECIFICATIONS</span></Link>
-				<Link href="ux-ui" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>UX / UI</span></Link>
-				<Link href="contenus" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>CONTENUS</span></Link>
-				<Link href="front-end" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>FRONT END</span></Link>
-				<Link href="architecture" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>ARCHITECTURE</span></Link>
-				<Link href="hebergement" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>HEBERGEMENT</span></Link>
-				<Link href="back-end" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>BACK END</span></Link>
-				<Link href="incontournables" className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2'><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer'>INCONTOURNABLES</span></Link>
+				<Link href="strategie"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>STATEGIE</span></Link>
+				<Link href="specifications"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>SPECIFICATIONS</span></Link>
+				<Link href="ux-ui"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>UX / UI</span></Link>
+				<Link href="contenus"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>CONTENUS</span></Link>
+				<Link href="front-end"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>FRONT END</span></Link>
+				<Link href="architecture"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>ARCHITECTURE</span></Link>
+				<Link href="back-end"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>BACK END</span></Link>
+				<Link href="incontournables"><span className='block text-white text-sm font-semibold rounded px-2 py-1 hover:bg-gray-700 cursor-pointer xl:mt-0 xl:ml-2'>INCONTOURNABLES</span></Link>
 				<Link href="panier">
 					<div className='block text-white text-sm font-semibold rounded px-2 py-1 mt-1 hover:bg-gray-700 xl:mt-0 xl:ml-2 cursor-pointer'>
 						<span className='pr-1 text-sm '>PANIER</span>
