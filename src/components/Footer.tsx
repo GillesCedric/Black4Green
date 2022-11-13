@@ -7,28 +7,25 @@ const Footer: NextComponentType = () => {
 		<div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16">
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens A</h1></li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
@@ -37,28 +34,25 @@ const Footer: NextComponentType = () => {
 			</ul>
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens B</h1></li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
@@ -67,28 +61,25 @@ const Footer: NextComponentType = () => {
 			</ul>
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens C</h1></li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
@@ -97,28 +88,25 @@ const Footer: NextComponentType = () => {
 			</ul>
 			<ul>
 				<li><h1 className="mb-1 font-semibold">Liens D</h1></li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
 					</Link>
 				</li>
-				<li>
+				<li className="text-gray-400 hover:text-blue-500 duration-300
+          text-sm cursor-pointer leading-6">
 					<Link
-						className="text-gray-400 hover:text-blue-500 duration-300
-          text-sm cursor-pointer leading-6"
 						href="#"
 					>
 						Ici le lien A
