@@ -1,6 +1,6 @@
 import data from '../data/data.json'
 import Storage from '../modules/storage/SessionStorage'
-import GoodPracticesModel, { Filters } from './GoodPractices'
+import GoodPracticesModel, { Filters, GoodPractices } from './GoodPractices'
 
 export type Cart = { id: string }
 
@@ -10,8 +10,8 @@ export default class CartModel {
 	})
 
 	public static readonly get = () => {
-		const cookies = Storage.get('cart')
-		if (cookies) return cookies
+		const cart = Storage.get('cart')
+		if (cart) return cart
 		return CartModel.cart
 	}
 
@@ -31,19 +31,30 @@ export default class CartModel {
 		return false
 	}
 
-	public static readonly remove = (practice: Cart) => {
+	public static readonly remove = (id: string) => {
 		let isIncontournable = false
 		data.map(value => {
-			if (value.Id == practice.id && value.Incontournable == Filters.incontournable.toUpperCase()) isIncontournable = true
+			if (value.Id == id && value.Incontournable == Filters.incontournable.toUpperCase()) isIncontournable = true
 		})
 		if (isIncontournable) return false
-		CartModel.cart = CartModel.cart.filter(value => value.id != practice.id)
-		this.save()
+		CartModel.cart = CartModel.cart.filter(value => value.id != id)
+		this.save()	
 		return true
 	}
 
 	public static readonly save = () => {
 		Storage.set('cart', CartModel.cart)
 	}
+
+	public static readonly getGoodPractices = (itemOffset: number = 0, endOffset: number = 21) => {
+		const cartIds: Cart[] = this.get()
+		const cartPractices: GoodPractices[] = []
+		cartIds.map((cartElement) => {
+			cartPractices.push(data.filter(value => value.Id == cartElement.id)[0])
+		})
+		return cartPractices.reverse().slice(itemOffset, endOffset)
+	}
+
+	public static readonly getGoodPracticesSize = () => (this.get() as Cart[]).length
 
 }
