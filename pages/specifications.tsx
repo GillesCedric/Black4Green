@@ -36,4 +36,5 @@ export async function getStaticProps() {
       recommendations
     }
   }
+
 }
