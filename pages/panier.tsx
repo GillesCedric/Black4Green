@@ -2,8 +2,6 @@ import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import Head from 'next/head'
-import GoodPracticesModel, { Filters, GoodPractices as GoodPracticesType } from '../src/models/GoodPractices'
-import CartModel from '../src/models/Cart'
 
 const Header = dynamic(() => import('../src/components/Header'), { suspense: true })
 const GoodPractices = dynamic(() => import('../src/components/panier/GoodPractices'), { suspense: true })
